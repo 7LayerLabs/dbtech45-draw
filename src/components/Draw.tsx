@@ -1,20 +1,30 @@
 'use client';
 
-import { Excalidraw } from '@excalidraw/excalidraw';
 import { useEffect, useState } from 'react';
 
 export default function Draw() {
+  const [ExcalidrawComponent, setExcalidrawComponent] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Set the asset path for self-hosted fonts
-    if (typeof window !== 'undefined') {
-      (window as any).EXCALIDRAW_ASSET_PATH = "/";
-    }
-    setMounted(true);
+    const loadExcalidraw = async () => {
+      try {
+        if (typeof window !== 'undefined') {
+          (window as any).EXCALIDRAW_ASSET_PATH = "/";
+          
+          const { Excalidraw } = await import('@excalidraw/excalidraw');
+          setExcalidrawComponent(() => Excalidraw);
+          setMounted(true);
+        }
+      } catch (error) {
+        console.error('Failed to load Excalidraw:', error);
+      }
+    };
+
+    loadExcalidraw();
   }, []);
 
-  if (!mounted) {
+  if (!mounted || !ExcalidrawComponent) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
@@ -27,7 +37,7 @@ export default function Draw() {
 
   return (
     <div className="w-full h-screen">
-      <Excalidraw
+      <ExcalidrawComponent
         initialData={{
           appState: {
             viewBackgroundColor: "#ffffff",
