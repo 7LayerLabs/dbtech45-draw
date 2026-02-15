@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DBTech45 Draw
 
-## Getting Started
+A virtual whiteboard for sketching hand-drawn diagrams, wireframes, and sketches. Built using Excalidraw and Next.js.
 
-First, run the development server:
+## Live URL
+
+🎨 **[https://dbtech45-draw.vercel.app](https://dbtech45-draw.vercel.app)**
+
+## Features
+
+- 💯 Free & open-source virtual whiteboard
+- 🎨 Infinite, canvas-based drawing area
+- ✍️ Hand-drawn style rendering
+- 🌓 Dark/light mode toggle
+- 📷 Image support and import
+- 🖼️ Export to PNG, SVG & clipboard
+- 💾 Save drawings as .excalidraw files
+- ⚒️ Complete drawing toolkit:
+  - Rectangle, circle, diamond shapes
+  - Arrow drawing with labels
+  - Line and free-draw tools
+  - Text and eraser tools
+- ➡️ Arrow-binding between elements
+- 🔙 Undo/Redo functionality
+- 🔍 Zoom and pan support
+- 📱 Mobile responsive
+
+## Technology Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Drawing Engine**: @excalidraw/excalidraw v0.18.0
+- **Styling**: Tailwind CSS 4
+- **TypeScript**: Full type safety
+- **Deployment**: Vercel
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deployed on Vercel with automatic builds from the GitHub repository.
 
-## Learn More
+**Repository**: https://github.com/7LayerLabs/dbtech45-draw
+**Live Site**: https://dbtech45-draw.vercel.app
 
-To learn more about Next.js, take a look at the following resources:
+## Custom Domain Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To make this available at `dbtech45.com/draw`, you'll need to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Set up a reverse proxy or subdirectory routing
+2. Configure DNS/domain settings to point `/draw` to the Vercel app
+3. Alternatively, set up a custom domain in Vercel
 
-## Deploy on Vercel
+## Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🔥 Identical functionality to Excalidraw.com
+- ⚡ Optimized for performance with Turbopack
+- 🎯 Production-ready deployment
+- 📱 Fully responsive design
+- 🎨 Custom branding for DBTech45
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Built by Milo for Derek @ DBTech45.com
